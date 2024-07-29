@@ -99,6 +99,40 @@
       href="assets/css/modes/moniz-normal.css"
     />
     <style>
+      .donation-button {
+        color: #c26d6d;
+        border: none;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s, box-shadow 0.3s;
+      }
+
+      .check-donation-button {
+        background-color: #d4e2f4;
+        color: #000;
+      }
+
+      .check-donation-button:hover {
+        background-color: #c3d4ec;
+      }
+
+      .donate-button {
+        background-color: #ffc107;
+        color: #000;
+      }
+
+      .donate-button:hover {
+        background-color: #e0a800;
+      }
+
+      .donation-button:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+
       .donation-total {
         position: relative;
         color: #fff;
@@ -168,17 +202,24 @@
                 <span></span>
               </a>
               <ul class="main-menu__list">
-                <li class="dropdown">
+                <!-- <li class="dropdown">
                   <a href="index.html">Home</a>
                 </li>
 
                 <li>
                   <a href="contact.html">Contact</a>
-                </li>
+                </li> -->
               </ul>
             </div>
             <div class="main-menu-wrapper__right">
-              <div class="main-menu-wrapper__right-contact-box"></div>
+              <div class="main-menu-wrapper__right-contact-box">
+                <button class="donation-button" id="check-donation-button">
+                  Cara Donasi
+                </button>
+                <button class="donation-button" id="donation-button">
+                  Donasi
+                </button>
+              </div>
             </div>
           </div>
         </nav>
