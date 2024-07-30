@@ -28,8 +28,8 @@ export const sidebarItems = [
   //     ],
   //   },
   {
-    title: "Contact",
-    link: "contact.html",
+    title: "ULBI",
+    link: "https://ulbi.ac.id",
     icon: "fas fa-envelope",
   },
 ];
