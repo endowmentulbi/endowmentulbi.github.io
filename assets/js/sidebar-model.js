@@ -8,7 +8,7 @@ export const sidebarItems = [
   },
   {
     title: "About Us",
-    link: "about.html",
+    link: "about-us.html",
     icon: "fas fa-info-circle",
   },
   //   {
