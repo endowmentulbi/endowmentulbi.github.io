@@ -98,81 +98,7 @@
       id="jssMode"
       href="assets/css/modes/moniz-normal.css"
     />
-    <style>
-      .donation-button {
-        color: #c26d6d;
-        border: none;
-        padding: 10px 20px;
-        margin: 5px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s, box-shadow 0.3s;
-      }
 
-      .check-donation-button {
-        background-color: #d4e2f4;
-        color: #000;
-      }
-
-      .check-donation-button:hover {
-        background-color: #c3d4ec;
-      }
-
-      .donate-button {
-        background-color: #ffc107;
-        color: #000;
-      }
-
-      .donate-button:hover {
-        background-color: #e0a800;
-      }
-
-      .donation-button:focus {
-        outline: none;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-      }
-
-      .donation-total {
-        position: relative;
-        color: #fff;
-        padding: 50px 0;
-      }
-
-      .donation-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        opacity: 0.5;
-        z-index: -1;
-      }
-
-      .donation-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-
-      .donation-icon img {
-        width: 50px;
-        margin-right: 20px;
-      }
-
-      .donation-text p {
-        font-size: 18px;
-        margin: 0;
-      }
-
-      .donation-text h2 {
-        font-size: 36px;
-        margin: 5px 0 0;
-      }
-    </style>
     <!-- toolbar css -->
     <link rel="stylesheet" href="assets/css/moniz-toolbar.css" />
   </head>
@@ -255,244 +181,121 @@
         </div>
       </section>
 
-      <section class="areas-of-practice">
+      <section class="donation-section py-5">
         <div class="container">
-          <div class="areas-of-practice__top">
-            <div class="row">
-              <div class="col-xl-6 col-lg-6">
-                <div class="areas-of-practice__top-left">
-                  <div class="section-title text-left">
-                    <span class="section-title__tagline">Endowment ULBI</span>
-                    <h2 class="section-title__title">
-                      Kami unggul dalam berbagai bidang ini
-                    </h2>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-6 col-lg-6">
-                <div class="areas-of-practice__top-right">
-                  <p class="areas-of-practice__top-right-text">
-                    Endowment ULBI adalah inisiatif untuk mendukung berbagai
-                    bidang yang kami kuasai, membantu komunitas dan masyarakat
-                    dengan berbagai layanan dan proyek inovatif.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div class="text-center mb-5">
+            <h2 class="section-title__title">Mari Berdonasi Sekarang Juga!</h2>
+            <p class="section-description">
+              Melalui Dana Abadi ULBI, Anda dapat berkontribusi bagi Universitas
+              dan berdampak bagi Indonesia.
+            </p>
           </div>
-          <div class="areas-of-practice__bottom">
-            <div class="row">
-              <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="areas-of-practice__single">
-                  <div class="areas-of-practice__icon-box">
-                    <div class="areas-of-practice__icon">
-                      <span class="icon-education"></span>
-                    </div>
-                    <div class="areas-of-practice__title">
-                      <h3><a href="scholarship.html">Beasiswa</a></h3>
-                    </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+              <form>
+                <div class="form-group">
+                  <label for="donation-amount">Nominal Donasi</label>
+                  <div
+                    class="donation-amounts d-flex justify-content-between flex-wrap mb-3"
+                  >
+                    <button type="button" class="btn btn-donation">
+                      10.000
+                    </button>
+                    <button type="button" class="btn btn-donation">
+                      25.000
+                    </button>
+                    <button type="button" class="btn btn-donation">
+                      100.000
+                    </button>
+                    <button type="button" class="btn btn-donation">
+                      500.000
+                    </button>
                   </div>
-                  <p class="areas-of-practice__text">
-                    Kami menyediakan berbagai beasiswa untuk mendukung
-                    pendidikan berkualitas bagi semua.
-                  </p>
-                  <a
-                    href="scholarship.html"
-                    class="areas-of-practice__read-more"
-                    ><i class="icon-right-arrow"></i
-                  ></a>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="other-amount"
+                    placeholder="Nominal donasi lainnya (min. 10.000)"
+                  />
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="areas-of-practice__single">
-                  <div class="areas-of-practice__icon-box">
-                    <div class="areas-of-practice__icon">
-                      <span class="icon-research"></span>
-                    </div>
-                    <div class="areas-of-practice__title">
-                      <h3><a href="research.html">Penelitian</a></h3>
-                    </div>
-                  </div>
-                  <p class="areas-of-practice__text">
-                    Mendukung penelitian yang berfokus pada inovasi teknologi
-                    dan kemajuan masyarakat.
-                  </p>
-                  <a href="research.html" class="areas-of-practice__read-more"
-                    ><i class="icon-right-arrow"></i
-                  ></a>
+                <div class="form-group">
+                  <label for="full-name">Nama Lengkap</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="full-name"
+                    placeholder="Nama Lengkap"
+                    required
+                  />
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="areas-of-practice__single">
-                  <div class="areas-of-practice__icon-box">
-                    <div class="areas-of-practice__icon">
-                      <span class="icon-community"></span>
-                    </div>
-                    <div class="areas-of-practice__title">
-                      <h3>
-                        <a href="community.html">Pengembangan Komunitas</a>
-                      </h3>
-                    </div>
-                  </div>
-                  <p class="areas-of-practice__text">
-                    Inisiatif untuk meningkatkan kesejahteraan komunitas melalui
-                    berbagai program sosial.
-                  </p>
-                  <a href="community.html" class="areas-of-practice__read-more"
-                    ><i class="icon-right-arrow"></i
-                  ></a>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Email"
+                    required
+                  />
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="areas-of-practice__single">
-                  <div class="areas-of-practice__icon-box">
-                    <div class="areas-of-practice__icon">
-                      <span class="icon-innovation"></span>
-                    </div>
-                    <div class="areas-of-practice__title">
-                      <h3><a href="innovation.html">Inovasi Teknologi</a></h3>
-                    </div>
-                  </div>
-                  <p class="areas-of-practice__text">
-                    Kami terus mengembangkan solusi teknologi untuk tantangan
-                    masa depan.
-                  </p>
-                  <a href="innovation.html" class="areas-of-practice__read-more"
-                    ><i class="icon-right-arrow"></i
-                  ></a>
+                <div class="form-group">
+                  <label for="phone">No. Telepon</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    placeholder="No. Telepon"
+                    required
+                  />
                 </div>
-              </div>
+                <div class="form-group">
+                  <label for="status">Status</label>
+                  <select class="form-control" id="status" required>
+                    <option value="">Pilih Status</option>
+                    <option value="Mahasiswa">Mahasiswa</option>
+                    <option value="Dosen">Dosen</option>
+                    <option value="Alumni">Alumni</option>
+                    <option value="Lainnya">Lainnya</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="city">Alamat Kota/Kabupaten</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="city"
+                    placeholder="Alamat Kota/Kabupaten"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="target-donation">Target Donasi</label>
+                  <select class="form-control" id="target-donation" required>
+                    <option value="">Pilih Target Donasi</option>
+                    <option value="Beasiswa">Beasiswa</option>
+                    <option value="Fasilitas">Fasilitas</option>
+                    <option value="Kegiatan">Kegiatan</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="message"
+                    >Kirim pesan atau harapan (opsional)</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    placeholder="Kirim pesan atau harapan (opsional)"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                  Lanjut ke Pembayaran
+                </button>
+              </form>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="we-make">
-        <div
-          class="we-make-bg"
-          style="
-            background-image: url(assets/images/backgrounds/we-make-bg.jpg);
-          "
-        ></div>
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-7 col-lg-6">
-              <div class="we-make__left">
-                <div class="section-title text-left">
-                  <span class="section-title__tagline">Endowment ULBI</span>
-                  <h2 class="section-title__title">
-                    Kami mendukung pendidikan, penelitian, dan inovasi
-                  </h2>
-                </div>
-              </div>
-            </div>
-            <!-- <div class="col-xl-5 col-lg-6">
-              <div class="we-make__right">
-                <div class="we-make__progress">
-                  <div class="we-make__progress-single">
-                    <h4 class="we-make__progress-title">Beasiswa Pendidikan</h4>
-                    <div class="bar">
-                      <div class="bar-inner count-bar" data-percent="90%">
-                        <div class="count-text">90%</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="we-make__progress-single">
-                    <h4 class="we-make__progress-title">Dukungan Penelitian</h4>
-                    <div class="bar">
-                      <div class="bar-inner count-bar" data-percent="75%">
-                        <div class="count-text">75%</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="we-make__progress-single">
-                    <h4 class="we-make__progress-title">Inovasi Teknologi</h4>
-                    <div class="bar marb-0">
-                      <div class="bar-inner count-bar" data-percent="65%">
-                        <div class="count-text">65%</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-          </div>
-        </div>
-      </section>
-
-      <section class="reasons-one">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-4">
-              <div class="reasons-one__left">
-                <div class="section-title text-left">
-                  <span class="section-title__tagline">Keunggulan Kami</span>
-                  <h2 class="section-title__title">
-                    Alasan mengapa kami terbaik
-                  </h2>
-                </div>
-
-                <p class="reasons-one__text-1">
-                  Kami menyediakan dukungan terbaik untuk pendidikan dan
-                  penelitian, dengan tujuan meningkatkan kesejahteraan dan
-                  pengetahuan masyarakat.
-                </p>
-                <!-- <a href="about.html" class="thm-btn"
-                  ><span>Discover more</span></a -->
-                <!-- /.thm-btn -->
-              </div>
-            </div>
-            <div class="col-xl-8">
-              <div class="reasons-one__img-box">
-                <div class="reasons-one-img-box-bg"></div>
-                <div class="row">
-                  <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="reasons-one__img-one">
-                      <img
-                        src="assets/images/resources/reasons-one-img-1.jpg"
-                        alt=""
-                      />
-                      <div class="reasons-one__shape-1"></div>
-                      <div class="reasons-one__shape-2"></div>
-                    </div>
-                  </div>
-                  <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="reasons-one__img-two">
-                      <img
-                        src="assets/images/resources/reasons-one-img-3.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div class="reasons-one__img-three reasons-one__img-two">
-                      <img
-                        src="assets/images/resources/reasons-one-img-2.jpg"
-                        alt=""
-                      />
-                      <div class="reasons-one__shape-3"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--Video One End-->
-
-      <!--Reasons One Start-->
-
-      <!--Reasons One End-->
-
-      <!--Blog One Start-->
-
-      <!--Blog One End-->
-
-      <!--Brand Two-->
-
-      <!--Brand Two End-->
-
-      <!--Site Footer One Start-->
       <footer class="site-footer">
         <div class="site-footer__top">
           <div
@@ -664,5 +467,17 @@
       src="assets/js/sidebar.js
     "
     ></script>
+    <script>
+      function selectDonation(button) {
+        // Remove active class from all buttons
+        var buttons = document.querySelectorAll(".btn-donation");
+        buttons.forEach(function (btn) {
+          btn.classList.remove("active");
+        });
+
+        // Add active class to the clicked button
+        button.classList.add("active");
+      }
+    </script>
   </body>
 </html>
