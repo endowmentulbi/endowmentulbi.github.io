@@ -102,7 +102,185 @@
     <!-- toolbar css -->
     <link rel="stylesheet" href="assets/css/moniz-toolbar.css" />
   </head>
+  <style>
+    .donation-button {
+      color: #c26d6d;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
 
+    .check-donation-button {
+      background-color: #d4e2f4;
+      color: #000;
+    }
+
+    .check-donation-button:hover {
+      background-color: #c3d4ec;
+    }
+
+    .donate-button {
+      background-color: #ffc107;
+      color: #000;
+    }
+
+    .donate-button:hover {
+      background-color: #e0a800;
+    }
+
+    .donation-button:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .donation-total {
+      position: relative;
+      color: #fff;
+      padding: 50px 0;
+    }
+
+    .donation-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .donation-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .donation-icon img {
+      width: 50px;
+      margin-right: 20px;
+    }
+
+    .donation-text p {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .donation-text h2 {
+      font-size: 36px;
+      margin: 5px 0 0;
+    }
+
+    .donation-section {
+      background-color: #f9f9f9;
+      padding: 60px 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .section-title__title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .section-description {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 40px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .btn-donation {
+      border: 1px solid #007bff;
+      background-color: #fff;
+      color: #007bff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      transition: background-color 0.3s, color 0.3s;
+      flex: 1;
+      margin: 5px;
+      text-align: center;
+      outline: none;
+    }
+
+    .btn-donation.active {
+      background-color: #a0a0a0;
+      border-color: #007bff;
+      color: #ffffff;
+    }
+
+    .btn-donation:hover,
+    .btn-donation:focus {
+      background-color: #87b7eb;
+      color: #fff;
+      border-color: #007bff;
+    }
+
+    .form-control {
+      border-radius: 5px;
+      box-shadow: none;
+      border: 1px solid #ccc;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      margin-bottom: 20px;
+    }
+
+    .form-control:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      padding: 12px;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #0056b3;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .btn-donation {
+        width: 100%;
+        margin: 5px 0;
+      }
+    }
+  </style>
   <body>
     <div class="preloader">
       <!-- <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" /> -->
@@ -174,9 +352,9 @@
             <ul class="thm-breadcrumb list-unstyled">
               <li><a href="index.html">Home</a></li>
               <li><span>.</span></li>
-              <li>About us</li>
+              <li>Donasi</li>
             </ul>
-            <h2>About us</h2>
+            <h2>Halaman Donasi</h2>
           </div>
         </div>
       </section>
@@ -198,16 +376,32 @@
                   <div
                     class="donation-amounts d-flex justify-content-between flex-wrap mb-3"
                   >
-                    <button type="button" class="btn btn-donation">
+                    <button
+                      type="button"
+                      class="btn btn-donation"
+                      onclick="selectDonation(this)"
+                    >
                       10.000
                     </button>
-                    <button type="button" class="btn btn-donation">
+                    <button
+                      type="button"
+                      class="btn btn-donation"
+                      onclick="selectDonation(this)"
+                    >
                       25.000
                     </button>
-                    <button type="button" class="btn btn-donation">
+                    <button
+                      type="button"
+                      class="btn btn-donation"
+                      onclick="selectDonation(this)"
+                    >
                       100.000
                     </button>
-                    <button type="button" class="btn btn-donation">
+                    <button
+                      type="button"
+                      class="btn btn-donation"
+                      onclick="selectDonation(this)"
+                    >
                       500.000
                     </button>
                   </div>
