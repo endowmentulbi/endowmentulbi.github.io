@@ -20,9 +20,8 @@ document.getElementById("other-amount").addEventListener("input", function () {
 });
 
 document
-  .getElementById("donation-form")
-  .addEventListener("submit", function (event) {
-    // Changed from 'onclick' to 'submit'
+  .getElementById("pembayaranTombol")
+  .addEventListener("click", function (event) {
     event.preventDefault();
 
     const data = {
