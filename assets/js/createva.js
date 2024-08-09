@@ -22,6 +22,7 @@ document.getElementById("other-amount").addEventListener("input", function () {
 document
   .getElementById("donation-form")
   .addEventListener("submit", function (event) {
+    // Changed from 'onclick' to 'submit'
     event.preventDefault();
 
     const data = {
@@ -46,15 +47,25 @@ document
       .then((result) => {
         if (result.status === "success") {
           const responseData = JSON.parse(result.data);
-          alert(
-            `Virtual Account: ${responseData.virtual_account}\nTransaction ID: ${responseData.trx_id}`
-          );
+          Swal.fire({
+            icon: "success",
+            title: "Berhasil",
+            text: `Virtual Account: ${responseData.virtual_account}\nTransaction ID: ${responseData.trx_id}`,
+          });
         } else {
-          alert("Something went wrong, please try again later.");
+          Swal.fire({
+            icon: "error",
+            title: "Gagal",
+            text: "Something went wrong, please try again later.",
+          });
         }
       })
       .catch((error) => {
         console.error("Error:", error);
-        alert("Failed to submit the form.");
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Failed to submit the form.",
+        });
       });
   });
