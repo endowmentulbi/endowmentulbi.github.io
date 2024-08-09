@@ -5,8 +5,10 @@ function selectDonation(button) {
     .trim()
     .replace(".", "")
     .replace(",", "");
-  selectedDonationAmount = parseInt(amountText, 10);
+  selectedDonationAmount = parseInt(amountText, 10) || 0;
+
   document.getElementById("other-amount").value = "";
+
   const buttons = document.querySelectorAll(".btn-donation");
   buttons.forEach((btn) => btn.classList.remove("selected"));
   button.classList.add("selected");
