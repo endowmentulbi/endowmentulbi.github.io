@@ -35,6 +35,11 @@ export const sidebarItems = [
         link: "beasiswa-khusus.html",
         icon: "fas fa-book",
       },
+      {
+        title: "Beasiswa Mitra",
+        link: "beasiswa-pendidikan.html",
+        icon: "fas fa-graduation-cap",
+      },
     ],
   },
   //   {
