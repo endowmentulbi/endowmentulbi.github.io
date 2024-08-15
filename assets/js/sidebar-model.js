@@ -40,6 +40,11 @@ export const sidebarItems = [
         link: "beasiswa-pendidikan.html",
         icon: "fas fa-graduation-cap",
       },
+      {
+        title: "Beasiswa KIP",
+        link: "beasiswa-pendidikan.html",
+        icon: "fas fa-graduation-cap",
+      },
     ],
   },
   //   {
