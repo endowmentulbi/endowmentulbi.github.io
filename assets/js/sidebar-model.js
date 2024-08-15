@@ -25,6 +25,11 @@ export const sidebarItems = [
         link: "struktur-organisasi-ulbi.html",
         icon: "fas fa-sitemap",
       },
+      {
+        title: "Beasiswa APERTI",
+        link: "visi-misi-ulbi.html",
+        icon: "fas fa-bullseye",
+      },
     ],
   },
   //   {
