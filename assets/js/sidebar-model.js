@@ -30,6 +30,11 @@ export const sidebarItems = [
         link: "visi-misi-ulbi.html",
         icon: "fas fa-bullseye",
       },
+      {
+        title: "Beasiswa YPBPI",
+        link: "beasiswa-khusus.html",
+        icon: "fas fa-book",
+      },
     ],
   },
   //   {
