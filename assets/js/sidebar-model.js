@@ -11,6 +11,17 @@ export const sidebarItems = [
     link: "about-us.html",
     icon: "fas fa-info-circle",
   },
+  {
+    title: "Program Sosial",
+    icon: "fas fa-info-circle",
+    children: [
+      {
+        title: "Beasiswa Prestasi",
+        link: "sejarah-ulbi.html",
+        icon: "fas fa-history",
+      },
+    ],
+  },
   //   {
   //     title: "Services",
   //     icon: "fas fa-concierge-bell",
