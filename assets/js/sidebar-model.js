@@ -20,6 +20,11 @@ export const sidebarItems = [
         link: "sejarah-ulbi.html",
         icon: "fas fa-history",
       },
+      {
+        title: "Beasiswa Tidak Mampu",
+        link: "struktur-organisasi-ulbi.html",
+        icon: "fas fa-sitemap",
+      },
     ],
   },
   //   {
