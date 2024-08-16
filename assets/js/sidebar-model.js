@@ -27,7 +27,7 @@ export const sidebarItems = [
       },
       {
         title: "Beasiswa APERTI",
-        link: "visi-misi-ulbi.html",
+        link: "beasiswa-aperti.html",
         icon: "fas fa-bullseye",
       },
       {
