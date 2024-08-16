@@ -42,7 +42,7 @@ export const sidebarItems = [
       },
       {
         title: "Beasiswa KIP",
-        link: "beasiswa-pendidikan.html",
+        link: "beasiswa-kip.html",
         icon: "fas fa-graduation-cap",
       },
     ],
