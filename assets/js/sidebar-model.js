@@ -32,7 +32,7 @@ export const sidebarItems = [
       },
       {
         title: "Beasiswa YPBPI",
-        link: "beasiswa-khusus.html",
+        link: "beasiswa-ypbpi.html",
         icon: "fas fa-book",
       },
       {
