@@ -173,6 +173,50 @@
         margin: 5px 0 0;
       }
     </style>
+    <!-- CSS untuk popup -->
+    <style>
+      /* CSS untuk memposisikan popup di tengah layar */
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: none; /* Popup tersembunyi secara default */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .popup-content {
+        position: relative;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .popup-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .popup-content button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: #c26d6d;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .popup-content button:hover {
+        background: #a75555;
+      }
+    </style>
     <!-- toolbar css -->
     <link rel="stylesheet" href="assets/css/moniz-toolbar.css" />
   </head>
