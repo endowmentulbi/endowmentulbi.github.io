@@ -175,6 +175,15 @@
     </style>
     <!-- CSS untuk popup -->
     <style>
+      /* Menambahkan keyframes untuk fade-in */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
       /* CSS untuk memposisikan popup di tengah layar */
       .popup-overlay {
         position: fixed;
@@ -187,8 +196,9 @@
         justify-content: center;
         align-items: center;
         z-index: 1000;
+        animation: fadeIn 0.5s ease-out; /* Durasi dan style animasi */
       }
-    
+
       .popup-content {
         position: relative;
         padding: 20px;
@@ -204,14 +214,14 @@
         align-items: center; /* Menempatkan elemen di tengah secara horizontal */
         justify-content: space-between; /* Distributes space between contents */
       }
-    
+
       .popup-content img {
         max-width: 93%; /* Membuat gambar tidak lebih besar dari kontainer */
         max-height: 80vh; /* Membatasi tinggi gambar hingga 80% dari tinggi viewport */
         border-radius: 10px;
         margin-bottom: 20px; /* Memberi jarak antara gambar dan tombol */
       }
-    
+
       .popup-content button {
         padding: 10px 20px;
         background: #c26d6d;
@@ -220,7 +230,7 @@
         border-radius: 5px;
         cursor: pointer;
       }
-    
+
       .popup-content button:hover {
         background: #a75555;
       }
@@ -755,12 +765,12 @@
       function showPopup() {
         document.getElementById("popup").style.display = "flex";
       }
-
+    
       // Fungsi untuk menutup popup
       function closePopup() {
         document.getElementById("popup").style.display = "none";
       }
-
+    
       // Tampilkan popup ketika halaman dimuat
       window.onload = function () {
         showPopup();
