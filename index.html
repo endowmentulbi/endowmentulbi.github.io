@@ -230,7 +230,10 @@
       <!-- Popup Gambar -->
       <div class="popup-overlay" id="popup">
         <div class="popup-content">
-          <img src="assets/images/ulbi/qris-endowmentulbi.jpeg" alt="Popup Image" />
+          <img
+            src="assets/images/ulbi/qris-endowmentulbi.jpeg"
+            alt="Popup Image"
+          />
           <button onclick="closePopup()">Tutup</button>
         </div>
       </div>
@@ -738,5 +741,22 @@
       src="assets/js/sidebar.js
     "
     ></script>
+    <!-- JavaScript untuk menampilkan popup -->
+    <script>
+      // Fungsi untuk menampilkan popup
+      function showPopup() {
+        document.getElementById("popup").style.display = "flex";
+      }
+
+      // Fungsi untuk menutup popup
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+
+      // Tampilkan popup ketika halaman dimuat
+      window.onload = function () {
+        showPopup();
+      };
+    </script>
   </body>
 </html>
