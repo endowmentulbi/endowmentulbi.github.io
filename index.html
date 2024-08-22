@@ -198,16 +198,20 @@
         max-width: 90%; /* Membatasi lebar popup */
         max-height: 90%; /* Membatasi tinggi popup */
         overflow: auto; /* Menambahkan scroll jika konten terlalu besar */
+        display: flex;
+        flex-direction: column; /* Mengatur arah elemen menjadi kolom */
+        align-items: center; /* Menempatkan elemen di tengah secara horizontal */
       }
 
       .popup-content img {
         max-width: 100%; /* Membuat gambar tidak lebih besar dari kontainer */
         max-height: 80vh; /* Membatasi tinggi gambar hingga 80% dari tinggi viewport */
         border-radius: 10px;
+        margin-bottom: 20px; /* Memberi jarak antara gambar dan tombol */
       }
 
       .popup-content button {
-        margin-top: 15px;
+        margin-top: auto; /* Membuat tombol selalu berada di bawah */
         padding: 10px 20px;
         background: #c26d6d;
         color: white;
