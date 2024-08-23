@@ -98,6 +98,10 @@
       id="jssMode"
       href="assets/css/modes/moniz-normal.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
 
     <!-- toolbar css -->
     <link rel="stylesheet" href="assets/css/moniz-toolbar.css" />
@@ -488,49 +492,6 @@
                 >
                   Lanjut ke Pembayaran
                 </button>
-                <!-- Modal untuk menampilkan QR Code dan detail transaksi -->
-                <div
-                  class="modal fade"
-                  id="transactionModal"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-labelledby="transactionModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="transactionModalLabel">
-                          Detail Transaksi
-                        </h5>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <!-- Konten yang akan diupdate lewat JavaScript -->
-                        <div id="qrCode"></div>
-                        <p>Transaction ID: <span id="transactionId"></span></p>
-                        <p>Amount: Rp<span id="amount"></span></p>
-                        <p>Date Created: <span id="dateCreated"></span></p>
-                      </div>
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="btn btn-secondary"
-                          data-dismiss="modal"
-                        >
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </form>
             </div>
           </div>
@@ -550,34 +511,7 @@
               <div
                 class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
                 data-wow-delay="100ms"
-              >
-                <!-- <div class="footer-widget__column footer-widget__about">
-                  <div class="footer-widget__about-logo">
-                    <a href="index.html">
-                      <img
-                        src="assets/images/resources/footer-logo.png"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <p class="footer-widget__about-text">
-                    Welcome to our website design agency. Lore ipsum simply text
-                    amet cing elit.
-                  </p>
-                  <div class="footer-widget__about-social-list">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="clr-fb"
-                      ><i class="fab fa-facebook"></i
-                    ></a>
-                    <a href="#" class="clr-dri"
-                      ><i class="fab fa-pinterest-p"></i
-                    ></a>
-                    <a href="#" class="clr-ins"
-                      ><i class="fab fa-instagram"></i
-                    ></a>
-                  </div>
-                </div> -->
-              </div>
+              ></div>
               <div
                 class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp"
                 data-wow-delay="200ms"
