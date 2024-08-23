@@ -49,11 +49,11 @@ document.getElementById("other-amount").addEventListener("input", function () {
 async function submitDonation() {
     const selectedButton = document.querySelector('.btn-donation.selected');
     const amount = selectedDonationAmount;
-    const tips = parseFloat(document.getElementById('tips').value) || 0;
+    // const tips = parseFloat(document.getElementById('tips').value) || 0;
 
     console.log('Amount:', amount); // Log the amount
-    console.log('Tips:', tips); // Log the tips
-    console.log('Total Amount Sent:', amount + tips); // Log the total amount sent
+    // console.log('Tips:', tips); // Log the tips
+    console.log('Total Amount Sent:', amount); // Log the total amount sent
 
     if (!selectedButton && amount < 10000) {
         alert('Minimum donasi lainnya adalah Rp 10.000');
@@ -69,7 +69,7 @@ async function submitDonation() {
             terminal: "A01",
             type: "D",
             inquiry: "F",
-            amount: amount + tips
+            amount: amount
         })
     });
 
