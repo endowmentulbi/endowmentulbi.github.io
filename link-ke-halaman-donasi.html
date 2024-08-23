@@ -473,94 +473,13 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="full-name">Nama Lengkap</label>
+                  <label for="tips">Tips</label>
                   <input
-                    type="text"
+                    type="number"
                     class="form-control"
-                    id="full-name"
-                    placeholder="Nama Lengkap"
-                    required
+                    id="tips"
+                    placeholder="Tips"
                   />
-                </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="Email"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="phone">No. Telepon</label>
-                  <input
-                    type="tel"
-                    class="form-control"
-                    id="phone"
-                    placeholder="No. Telepon"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="status">Status</label>
-                  <select class="form-control" id="status" required>
-                    <option value="">Pilih Status</option>
-                    <option value="Mahasiswa">Mahasiswa</option>
-                    <option value="Dosen">Dosen</option>
-                    <option value="Alumni">Alumni</option>
-                    <option value="Lainnya">Lainnya</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="city">Alamat Kota/Kabupaten</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="city"
-                    placeholder="Alamat Kota/Kabupaten"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="target-donation">Target Donasi</label>
-                  <select class="form-control" id="target-donation" required>
-                    <option value="">Pilih Target Donasi</option>
-                    <option value="Beasiswa">Beasiswa</option>
-                    <option value="Fasilitas">Fasilitas</option>
-                    <option value="Kegiatan">Kegiatan</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="message"
-                    >Kirim pesan atau harapan (opsional)</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="message"
-                    placeholder="Kirim pesan atau harapan (opsional)"
-                  ></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="target-donation">Metode Pembayaran</label>
-                  <select class="form-control" id="payment-method" required>
-                    <option value="">Pilih Metode Pembayaran</option>
-                    <option value="BNI">POSPAY Via BNI</option>
-                    <option value="BCA">POSPAY Via BCA</option>
-                    <option value="Mandiri">POSPAY Via Mandiri</option>
-                    <option value="BRI">POSPAY Via BRI</option>
-                    <option value="BSI">POSPAY Via BSI</option>
-                    <option value="BTN">POSPAY Via BTN</option>
-                  </select>
-                </div>
-                <div id="payment-info" style="margin-top: 20px">
-                  <img
-                    id="qris-image"
-                    src="./assets/images/ulbi/qris-endowmentulbi.jpeg"
-                    alt="QRIS Image"
-                    style="width: 150px; display: none"
-                  />
-                  <p id="bank-account" style="margin-top: 10px"></p>
                 </div>
                 <button
                   id="pembayaranTombol"
@@ -569,6 +488,49 @@
                 >
                   Lanjut ke Pembayaran
                 </button>
+                <!-- Modal untuk menampilkan QR Code dan detail transaksi -->
+                <div
+                  class="modal fade"
+                  id="transactionModal"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="transactionModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="transactionModalLabel">
+                          Detail Transaksi
+                        </h5>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <!-- Konten yang akan diupdate lewat JavaScript -->
+                        <div id="qrCode"></div>
+                        <p>Transaction ID: <span id="transactionId"></span></p>
+                        <p>Amount: Rp<span id="amount"></span></p>
+                        <p>Date Created: <span id="dateCreated"></span></p>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </form>
             </div>
           </div>
@@ -759,7 +721,7 @@
       ><i class="fa fa-angle-up"></i
     ></a>
     <!-- <script type="module" src="./assets/js/createva.js"></script> -->
-    <script type="module" src="./assets/js/create-pembayaran.js"></script>
+    <!-- <script type="module" src="./assets/js/create-pembayaran.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="assets/vendors/jquery/jquery-3.5.1.min.js"></script>
@@ -787,10 +749,14 @@
     <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
     <script src="assets/vendors/timepicker/timePicker.js"></script>
 
+    <!-- QR Code Library -->
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
 
     <!-- template js -->
-    <script type="module" src="./assets/js/donation.js"></script>
+    <!-- <script type="module" src="./assets/js/donation.js"></script> -->
+    <script type="module" src="./assets/js/newpospaygenerateqr.js"></script>
 
     <script src="assets/js/moniz.js"></script>
     <script
