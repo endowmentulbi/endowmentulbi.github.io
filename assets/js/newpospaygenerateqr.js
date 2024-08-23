@@ -90,11 +90,11 @@ document.getElementById('pembayaranTombol').addEventListener('click', async () =
         // Tampilkan QR Code
         const qrCode = new QRCode(document.getElementById('qrCode'), {
             text: data.qr_string,
-            width: 128,
-            height: 128,
-            colorDark : "#000000",
-            colorLight : "#ffffff",
-            correctLevel : QRCode.CorrectLevel.H
+            width: 128, // Consider increasing size if feasible
+            height: 128, // Consider increasing size if feasible
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.L // Lowering the correction level to 'L'
         });
 
         // Update detail transaksi
