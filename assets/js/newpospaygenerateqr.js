@@ -3,9 +3,8 @@ let selectedDonationAmount = 0;
 function selectDonation(button) {
   const amountText = button.textContent
     .trim()
-    .replace(".", "")
-    .replace(",", "");
-    console.log(amountText);
+    .replace(/\./g, "")
+    .replace(/,/g, "");
   selectedDonationAmount = parseInt(amountText, 10) || 0;
 
   document.getElementById("other-amount").value = "";
