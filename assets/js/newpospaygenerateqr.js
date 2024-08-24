@@ -5,6 +5,7 @@ function selectDonation(button) {
     .trim()
     .replace(".", "")
     .replace(",", "");
+    console.log(amountText);
   selectedDonationAmount = parseInt(amountText, 10) || 0;
 
   document.getElementById("other-amount").value = "";
