@@ -17,12 +17,12 @@ export const sidebarItems = [
     children: [
       {
         title: "Beasiswa Prestasi",
-        link: "sejarah-ulbi.html",
+        link: "beasiswa-prestasi.html",
         icon: "fas fa-history",
       },
       {
         title: "Beasiswa Tidak Mampu",
-        link: "struktur-organisasi-ulbi.html",
+        link: "beasiswa-tidakmampu.html",
         icon: "fas fa-sitemap",
       },
       {
@@ -37,7 +37,7 @@ export const sidebarItems = [
       },
       {
         title: "Beasiswa Mitra",
-        link: "beasiswa-pendidikan.html",
+        link: "beasiswa-mitra.html",
         icon: "fas fa-graduation-cap",
       },
       {
