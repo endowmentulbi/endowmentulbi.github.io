@@ -38,6 +38,30 @@ document
     selectDonation(this);
   });
 
+document
+  .getElementById("donation-1000000")
+  .addEventListener("click", function () {
+    selectDonation(this);
+  });
+
+document
+  .getElementById("donation-5000000")
+  .addEventListener("click", function () {
+    selectDonation(this);
+  });
+
+document
+  .getElementById("donation-8000000")
+  .addEventListener("click", function () {
+    selectDonation(this);
+  });
+
+document
+  .getElementById("donation-10000000")
+  .addEventListener("click", function () {
+    selectDonation(this);
+  });
+
 document.getElementById("other-amount").addEventListener("input", function () {
   selectedDonationAmount = parseInt(this.value) || 0;
 
