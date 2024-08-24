@@ -1693,6 +1693,52 @@ body.boxed-wrapper {
   color: #fff;
 }
 
+.mobile-nav__contact details summary {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.mobile-nav__contact details summary i {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--moniz-primary, #fc653c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 11px;
+  margin-right: 10px;
+  color: #fff;
+}
+
+.mobile-nav__contact details summary a {
+  color: #ffffff;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.mobile-nav__contact details ul {
+  margin-left: 40px;
+  padding: 10px 0;
+}
+
+.mobile-nav__contact details ul li a {
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 5px 0;
+}
+
+.mobile-nav__contact details[open] summary i {
+  background-color: var(--moniz-primary-dark, #e94b1c);
+}
+
+
 .mobile-nav__container .main-logo,
 .mobile-nav__container .topbar__buttons,
 .mobile-nav__container .main-menu__language,
@@ -2114,11 +2160,16 @@ body.boxed-wrapper {
   transform: translateY(100px);
   -webkit-transition-delay: 2500ms;
   transition-delay: 2500ms;
-  -webkit-transition: opacity 2000ms ease, color 500ms ease, background 500ms ease, -webkit-transform 2000ms ease;
-  transition: opacity 2000ms ease, color 500ms ease, background 500ms ease, -webkit-transform 2000ms ease;
-  transition: opacity 2000ms ease, color 500ms ease, background 500ms ease, -webkit-transform 2000ms ease;
-  transition: transform 2000ms ease, opacity 2000ms ease, color 500ms ease, background 500ms ease;
-  transition: transform 2000ms ease, opacity 2000ms ease, color 500ms ease, background 500ms ease, -webkit-transform 2000ms ease;
+  -webkit-transition: opacity 2000ms ease, color 500ms ease,
+ background 500ms ease, -webkit-transform 2000ms ease;
+  transition: opacity 2000ms ease, color 500ms ease, background 500ms ease,
+ -webkit-transform 2000ms ease;
+  transition: opacity 2000ms ease, color 500ms ease,
+ background 500ms ease, -webkit-transform 2000ms ease;
+  transition: transform 2000ms ease, opacity 2000ms ease, color 500ms ease,
+ background 500ms ease;
+  transition: transform 2000ms ease, opacity 2000ms ease, color 500ms ease,
+ background 500ms ease, -webkit-transform 2000ms ease;
 }
 
 .main-slider .swiper-slide-active .image-layer {
