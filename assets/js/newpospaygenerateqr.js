@@ -115,14 +115,17 @@ document
   .addEventListener("click", async () => {
     const response = await submitDonation();
     const data = response.data;
-
+    const formattedAmount = new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR",
+    }).format(data.payload.amount);
     if (response.message === "Generate QRIS Berhasil") {
       // Menggabungkan HTML untuk SweetAlert dengan CSS tambahan untuk perataan tengah
       const transactionDetails = `
             <div style="text-align: center;">
                 <div id="qrCodeComplete" style="display: inline-block;"></div>
                 <p>Transaction ID: ${data.payload.transaction_id}</p>
-                <p>Amount: Rp${data.payload.amount}</p>
+                <p>Amount: Rp${formattedAmount}</p>
                 <p>Date Created: ${new Date(
                   data.payload.date_created
                 ).toLocaleString()}</p>
