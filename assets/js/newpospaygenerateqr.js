@@ -124,14 +124,14 @@ document
       const transactionDetails = `
             <div style="text-align: center;">
                 <div id="qrCodeComplete" style="display: inline-block;"></div>
-                <p>Transaction ID: ${data.payload.transaction_id}
-                  <button type="button" id="copyTrxIdTombol" title="Copy Transaction ID" style="border: none; background: none; cursor: pointer; padding: 0 0 0 4px;">📋</button>
+                <p>No Invoice: ${data.payload.transaction_id}
+                  <button type="button" id="copyTrxIdTombol" title="Copy No Invoice" style="border: none; background: none; cursor: pointer; padding: 0 0 0 4px;">📋</button>
                 </p>
-                <p>Amount: ${formattedAmount}</p>
-                <p>Date Created: ${new Date(
+                <p>Jumlah: ${formattedAmount}</p>
+                <p>Tanggal Dibuat: ${new Date(
                   data.payload.date_created
                 ).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Jakarta" })}</p>
-                <a href="cek-status-pembayaran.html?trx=${data.payload.transaction_id}" target="_blank" class="btn btn-primary" style="margin-top: 10px; display: inline-block;">Cek Status Pembayaran</a>
+                <a href="cek-status-pembayaran.html?trx=${data.payload.transaction_id}" target="_blank" class="btn btn-primary" style="margin-top: 10px; display: inline-block;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">Cek Status Pembayaran</a>
             </div>
         `;
 
