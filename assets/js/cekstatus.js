@@ -24,20 +24,24 @@ async function checkStatus(transactionId) {
   }
 
   const data = result.data;
+  const isPending = data.payment_state === "68";
 
-  const formattedAmount = new Intl.NumberFormat("id-ID", {
-    style: "currency",
-    currency: "IDR",
-  }).format(data.amount);
+  const formattedAmount = isPending
+    ? "-"
+    : new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+      }).format(data.amount);
 
-  const formattedDate = data.transaction_date?.Time
-    ? new Date(data.transaction_date.Time).toLocaleDateString("id-ID", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-        timeZone: "Asia/Jakarta",
-      })
-    : "-";
+  const formattedDate =
+    !isPending && data.transaction_date?.Time
+      ? new Date(data.transaction_date.Time).toLocaleDateString("id-ID", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+          timeZone: "Asia/Jakarta",
+        })
+      : "-";
 
   document.getElementById("result-status").textContent = result.status;
   document.getElementById("result-trx-id").textContent = data.transaction_id;

@@ -171,17 +171,15 @@ document
               navigator.clipboard.writeText(data.payload.transaction_id);
 
               const btn = e.currentTarget;
+              const originalIcon = btn.textContent;
               btn.style.transform = "scale(0.85)";
-              setTimeout(() => (btn.style.transform = "scale(1)"), 150);
-
-              Swal.fire({
-                toast: true,
-                position: "top",
-                icon: "success",
-                title: "No Invoice berhasil disalin",
-                showConfirmButton: false,
-                timer: 1500,
-              });
+              btn.textContent = "✅";
+              btn.title = "No Invoice berhasil disalin";
+              setTimeout(() => {
+                btn.style.transform = "scale(1)";
+                btn.textContent = originalIcon;
+                btn.title = "Copy No Invoice";
+              }, 1200);
             });
         },
         customClass: {
