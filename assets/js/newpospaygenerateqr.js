@@ -125,7 +125,7 @@ document
             <div style="text-align: center;">
                 <div id="qrCodeComplete" style="display: inline-block;"></div>
                 <p>No Invoice: ${data.payload.transaction_id}
-                  <button type="button" id="copyTrxIdTombol" title="Copy No Invoice" style="border: none; background: none; cursor: pointer; padding: 0 0 0 4px;">📋</button>
+                  <button type="button" id="copyTrxIdTombol" title="Copy No Invoice" style="border: none; background: none; cursor: pointer; padding: 0 0 0 4px; transition: transform 150ms;">📋</button>
                 </p>
                 <p>Jumlah: ${formattedAmount}</p>
                 <p>Tanggal Dibuat: ${new Date(
@@ -156,10 +156,21 @@ document
 
           document
             .getElementById("copyTrxIdTombol")
-            .addEventListener("click", () => {
+            .addEventListener("click", (e) => {
               navigator.clipboard.writeText(data.payload.transaction_id);
-              Swal.showValidationMessage("Transaction ID disalin!");
-              setTimeout(() => Swal.resetValidationMessage(), 1500);
+
+              const btn = e.currentTarget;
+              btn.style.transform = "scale(0.85)";
+              setTimeout(() => (btn.style.transform = "scale(1)"), 150);
+
+              Swal.fire({
+                toast: true,
+                position: "top",
+                icon: "success",
+                title: "No Invoice berhasil disalin",
+                showConfirmButton: false,
+                timer: 1500,
+              });
             });
         },
         customClass: {
