@@ -104,6 +104,13 @@ async function submitDonation() {
     const responseData = await response.json();
     console.log("Response Data:", responseData); // Log the response data
     return responseData;
+  } else if (response.status === 429) {
+    Swal.fire({
+      icon: "warning",
+      title: "Terlalu Banyak Percobaan",
+      text: "Terdeteksi indikasi spam. Silakan tunggu beberapa menit sebelum mencoba lagi.",
+    });
+    return null;
   } else {
     alert("Gagal memproses donasi: " + response.statusText);
     return null;
@@ -138,6 +145,7 @@ document
                 <p>No Invoice: ${data.payload.transaction_id}
                   <button type="button" id="copyTrxIdTombol" title="Copy No Invoice" style="border: none; background: none; cursor: pointer; padding: 0 0 0 4px; transition: transform 150ms;">📋</button>
                 </p>
+                <p id="copyStatusText" style="color: #28a745; font-size: 13px; height: 16px; margin-top: -10px;"></p>
                 <p>Jumlah: ${formattedAmount}</p>
                 <p>Tanggal Dibuat: ${new Date(
                   data.payload.date_created
@@ -172,14 +180,15 @@ document
 
               const btn = e.currentTarget;
               const originalIcon = btn.textContent;
+              const statusText = document.getElementById("copyStatusText");
               btn.style.transform = "scale(0.85)";
               btn.textContent = "✅";
-              btn.title = "No Invoice berhasil disalin";
+              statusText.textContent = "No Invoice berhasil disalin";
               setTimeout(() => {
                 btn.style.transform = "scale(1)";
                 btn.textContent = originalIcon;
-                btn.title = "Copy No Invoice";
-              }, 1200);
+                statusText.textContent = "";
+              }, 1500);
             });
         },
         customClass: {
