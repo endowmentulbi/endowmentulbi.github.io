@@ -110,19 +110,6 @@ async function submitDonation() {
   }
 }
 
-async function checkPaymentStatus(transactionId) {
-  const response = await fetch(
-    `https://endowment-be.ulbi.ac.id/api/v1/pospay/status/${transactionId}`
-  );
-  const result = await response.json();
-
-  Swal.fire({
-    icon: result.data.payment_state === "00" ? "success" : "info",
-    title: result.status,
-    text: `Transaction ID: ${transactionId}`,
-  });
-}
-
 document
   .getElementById("pembayaranTombol")
   .addEventListener("click", async () => {
@@ -141,8 +128,8 @@ document
                 <p>Amount: ${formattedAmount}</p>
                 <p>Date Created: ${new Date(
                   data.payload.date_created
-                ).toLocaleString("id-ID", { timeZone: "Asia/Jakarta" })} WIB</p>
-                <button id="cekStatusTombol" class="btn btn-primary" style="margin-top: 10px;">Cek Status Pembayaran</button>
+                ).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Jakarta" })}</p>
+                <a href="cek-status-pembayaran.html?trx=${data.payload.transaction_id}" target="_blank" class="btn btn-primary" style="margin-top: 10px; display: inline-block;">Cek Status Pembayaran</a>
             </div>
         `;
 
@@ -164,12 +151,6 @@ document
               correctLevel: QRCode.CorrectLevel.M, // Menggunakan tingkat koreksi yang lebih moderat
             }
           );
-
-          document
-            .getElementById("cekStatusTombol")
-            .addEventListener("click", () => {
-              checkPaymentStatus(data.payload.transaction_id);
-            });
         },
         customClass: {
           confirmButton: "btn btn-secondary",

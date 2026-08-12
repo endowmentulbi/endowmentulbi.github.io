@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Donor List | Universitas Logistik dan Bisnis Internasional</title>
+    <title>Cek Status Pembayaran | Universitas Logistik dan Bisnis Internasional</title>
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
     <meta name="description" content="Endownment ULBI" />
 
@@ -55,53 +55,39 @@
             transition: background-color 0.3s, box-shadow 0.3s;
         }
 
-        .donation-table {
-            margin-top: 30px;
-            border-collapse: collapse;
+        .status-check-box {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .status-check-box input {
             width: 100%;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        th,
-        td {
-            text-align: left;
             padding: 12px;
-            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
-        th {
-            background-color: #000;
-            /* Black header */
-            color: rgb(238, 103, 0);
-            font-weight: bold;
-            /* Bold text */
-            text-transform: uppercase;
-            /* Uppercase text for better visibility */
-            padding: 15px;
-            /* Increased padding */
+        .status-result {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
         }
 
-        tr {
-            transition: background-color 0.3s;
+        .status-result.success {
+            background-color: #e6f9ee;
+            border: 1px solid #34c759;
         }
 
-        tr:hover {
-            background-color: #f1f1f1;
-            /* Light gray on row hover */
+        .status-result.pending {
+            background-color: #fff8e1;
+            border: 1px solid #f5a623;
         }
 
-        td:hover {
-            background-color: #e0e0e0;
-            /* Slightly darker gray on cell hover */
-        }
-
-        tbody tr:nth-child(even) {
-            background-color: #f9f9f9;
-            /* Light gray for even rows */
-        }
-
-        tbody tr:last-child {
-            border-bottom: 2px solid #0659c5;
+        .status-result.failed {
+            background-color: #fdecea;
+            border: 1px solid #e74c3c;
         }
 
         .section-title {
@@ -124,9 +110,7 @@
 </head>
 
 <body>
-    <div class="preloader">
-        <!-- <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" /> -->
-    </div>
+    <div class="preloader"></div>
     <!-- /.preloader -->
 
     <div class="page-wrapper">
@@ -142,7 +126,6 @@
                     <div class="main-menu-wrapper__main-menu">
                         <a href="#" class="mobile-nav__toggler"><span></span></a>
                         <ul class="main-menu__list">
-                            <!-- <li class="dropdown"><a href="index.html">Home</a></li> -->
                         </ul>
                     </div>
                     <div class="main-menu-wrapper__right">
@@ -174,9 +157,9 @@
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="index.html">Home</a></li>
                         <li><span>.</span></li>
-                        <li>List Donatur</li>
+                        <li>Cek Status Pembayaran</li>
                     </ul>
-                    <h2>List Donatur</h2>
+                    <h2>Cek Status Pembayaran</h2>
                 </div>
             </div>
         </section>
@@ -184,20 +167,21 @@
         <section class="reasons-one">
             <div class="container">
                 <div class="section-title">
-                    <h2>Donor List</h2>
-                    <p>Berikut adalah daftar 10 donatur teratas beserta jumlah donasinya:</p>
+                    <h2>Cek Status Pembayaran</h2>
+                    <p>Masukkan Transaction ID dari QR Code yang kamu dapat saat donasi.</p>
                 </div>
-                <table class="table donation-table">
-                    <thead>
-                        <tr>
-                            <th>Nama Donatur</th>
-                            <th>Jumlah Donasi (IDR)</th>
-                        </tr>
-                    </thead>
-                    <tbody id="donor-list">
-                        <!-- Donor data will be inserted here -->
-                    </tbody>
-                </table>
+                <div class="status-check-box">
+                    <input type="text" id="transaction-id-input" placeholder="Contoh: ULBI-20260812-GVIN-00000322" />
+                    <button class="thm-btn" id="cek-status-button" style="width: 100%;">Cek Status</button>
+
+                    <div id="status-result" class="status-result">
+                        <p><strong>Status:</strong> <span id="result-status"></span></p>
+                        <p><strong>Transaction ID:</strong> <span id="result-trx-id"></span></p>
+                        <p><strong>Nama:</strong> <span id="result-customer"></span></p>
+                        <p><strong>Jumlah:</strong> <span id="result-amount"></span></p>
+                        <p><strong>Tanggal:</strong> <span id="result-date"></span></p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -255,19 +239,6 @@
                 <li><i class="fas fa-gift"></i><a href="link-ke-halaman-donasi.html">Donasi</a></li>
                 <li><i class="fas fa-user-plus"></i><a href="donatur.html">List Donatur</a></li>
                 <li><i class="fas fa-info-circle"></i><a href="about-us.html">About Us</a></li>
-                <li>
-                    <details>
-                        <summary><i class="fas fa-users"></i> Program</summary>
-                        <ul>
-                            <li><a href="program1.html">Beasiswa Prestasi</a></li>
-                            <li><a href="program2.html">Beasiswa Tidak Mampu</a></li>
-                            <li><a href="beasiswa-aperti.html">Beasiswa APERTI</a></li>
-                            <li><a href="beasiswa-ypbpi.html">Beasiswa YPBPI</a></li>
-                            <li><a href="program2.html">Beasiswa Mitra</a></li>
-                            <li><a href="beasiswa-kip.html">Beasiswa KIP</a></li>
-                        </ul>
-                    </details>
-                </li>
                 <li><i class="fas fa-university"></i><a href="https://ulbi.ac.id">ULBI</a></li>
                 <hr />
                 <li><i class="fa fa-envelope"></i><a href="mailto:keu.ypbpi@gmail.com">keu.ypbpi@gmail.com</a></li>
@@ -277,49 +248,16 @@
         </div>
     </div>
 
-    <div class="search-popup">
-        <div class="search-popup__overlay search-toggler"></div>
-        <div class="search-popup__content">
-            <form action="#">
-                <label for="search" class="sr-only">search here</label>
-                <input type="text" id="search" placeholder="Search Here..." />
-                <button type="submit" aria-label="search submit" class="thm-btn">
-                    <i class="icon-magnifying-glass"></i>
-                </button>
-            </form>
-        </div>
-    </div>
-
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
     <script src="assets/vendors/jquery/jquery-3.5.1.min.js"></script>
     <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendors/jarallax/jarallax.min.js"></script>
-    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
     <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
-    <script src="assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
     <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
-    <script src="assets/vendors/nouislider/nouislider.min.js"></script>
-    <script src="assets/vendors/odometer/odometer.min.js"></script>
-    <script src="assets/vendors/swiper/swiper.min.js"></script>
-    <script src="assets/vendors/tiny-slider/tiny-slider.min.js"></script>
-    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
     <script src="assets/vendors/wow/wow.js"></script>
-    <script src="assets/vendors/isotope/isotope.js"></script>
-    <script src="assets/vendors/countdown/countdown.min.js"></script>
-    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="assets/vendors/twentytwenty/twentytwenty.js"></script>
-    <script src="assets/vendors/twentytwenty/jquery.event.move.js"></script>
-    <script src="assets/vendors/bxslider/jquery.bxslider.min.js"></script>
-    <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
-    <script src="assets/vendors/vegas/vegas.min.js"></script>
-    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
-    <script src="assets/vendors/timepicker/timePicker.js"></script>
 
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
-
-    <script src="assets/js/donatur.js"></script>
+    <script src="assets/js/cekstatus.js"></script>
 
     <script src="assets/js/moniz.js"></script>
     <script type="module" src="assets/js/sidebar.js"></script>
