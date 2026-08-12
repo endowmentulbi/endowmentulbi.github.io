@@ -10,6 +10,19 @@ async function checkStatus(transactionId) {
     `https://endowment-be.ulbi.ac.id/api/v1/pospay/status/${transactionId}`
   );
   const result = await response.json();
+
+  if (!response.ok) {
+    document.getElementById("result-status").textContent = result.message;
+    document.getElementById("result-trx-id").textContent = transactionId;
+    document.getElementById("result-customer").textContent = "-";
+    document.getElementById("result-amount").textContent = "-";
+    document.getElementById("result-date").textContent = "-";
+    resultBox.classList.remove("success", "pending", "failed");
+    resultBox.classList.add("failed");
+    resultBox.style.display = "block";
+    return;
+  }
+
   const data = result.data;
 
   const formattedAmount = new Intl.NumberFormat("id-ID", {

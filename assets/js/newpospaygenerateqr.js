@@ -124,7 +124,9 @@ document
       const transactionDetails = `
             <div style="text-align: center;">
                 <div id="qrCodeComplete" style="display: inline-block;"></div>
-                <p>Transaction ID: ${data.payload.transaction_id}</p>
+                <p>Transaction ID: ${data.payload.transaction_id}
+                  <button type="button" id="copyTrxIdTombol" title="Copy Transaction ID" style="border: none; background: none; cursor: pointer; padding: 0 0 0 4px;">📋</button>
+                </p>
                 <p>Amount: ${formattedAmount}</p>
                 <p>Date Created: ${new Date(
                   data.payload.date_created
@@ -151,6 +153,14 @@ document
               correctLevel: QRCode.CorrectLevel.M, // Menggunakan tingkat koreksi yang lebih moderat
             }
           );
+
+          document
+            .getElementById("copyTrxIdTombol")
+            .addEventListener("click", () => {
+              navigator.clipboard.writeText(data.payload.transaction_id);
+              Swal.showValidationMessage("Transaction ID disalin!");
+              setTimeout(() => Swal.resetValidationMessage(), 1500);
+            });
         },
         customClass: {
           confirmButton: "btn btn-secondary",
