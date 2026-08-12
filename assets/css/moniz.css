@@ -4426,6 +4426,12 @@ body.boxed-wrapper {
   padding-bottom: 27px;
 }
 
+.footer-widget__contact-list li {
+  font-size: 16px;
+  color: #9e9ea7;
+  line-height: 30px;
+}
+
 .footer-widget__contact-info p {
   margin: 0;
   line-height: 31px;
