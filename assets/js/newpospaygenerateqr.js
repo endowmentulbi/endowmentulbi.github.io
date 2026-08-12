@@ -112,8 +112,19 @@ async function submitDonation() {
 
 document
   .getElementById("pembayaranTombol")
-  .addEventListener("click", async () => {
-    const response = await submitDonation();
+  .addEventListener("click", async (e) => {
+    const tombol = e.currentTarget;
+    tombol.disabled = true;
+
+    let response;
+    try {
+      response = await submitDonation();
+    } finally {
+      tombol.disabled = false;
+    }
+
+    if (!response) return;
+
     const data = response.data;
     const formattedAmount = new Intl.NumberFormat("id-ID", {
       style: "currency",
